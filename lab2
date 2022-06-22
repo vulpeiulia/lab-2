@@ -1,0 +1,63 @@
+abstract class EmployeesBuilder {
+
+
+    private SchoolEmployee employee;
+
+    public SchoolEmployee getEmployee(){
+        return employee;
+    }
+
+    public EmployeesBuilder(){
+        employee=new SchoolEmployee();
+
+    }
+
+    public void addName(String name) {
+        employee.setName(name);
+    }
+
+    public void addSurname(String surname) {
+        employee.setSurname(surname);
+    }
+
+    public void addAge(Integer age) {
+        employee.setAge(age);
+    }
+
+    
+    public void addDepartment(String department) {
+        employee.setDepartment(department);
+    }
+
+    public void addJob(String job) {
+        employee.setJob(job);
+    }
+    public abstract String getJobType();
+
+}
+
+class Deputy_Directorhead_teacherBuild extends EmployeesBuilder{
+    public String getJobType(){
+        return "head_teacher";
+    }
+}
+
+class competenceBuild extends EmployeesBuilder{
+    public String getJobType(){
+        return "head teacher for educational work";
+    }
+}
+
+class deputy_head_teacherBuild extends EmployeesBuilder{
+    public String getJobType(){
+        return "head teacher assistant";
+    }
+}
+
+
+class CardiologBuild extends EmployeesBuilder{
+    public String getJobType(){
+        return "Doctor-Cardiolog";
+    }
+}
+
